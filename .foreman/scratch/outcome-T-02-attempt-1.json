@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "event": "ticket_outcome",
+  "ticket_id": "T-02-route-skeleton",
+  "attempt": 1,
+  "outcome": "reported",
+  "worker_receipt_sha256": "bfb6bdc00d3eadf828eecc6333df023d18fcb1ed8e5bb57159c3bb42913fffec",
+  "worker_minutes": 3.3133167,
+  "noncached_input_tokens": 42935
+}

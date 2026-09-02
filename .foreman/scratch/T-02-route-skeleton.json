@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "T-02-route-skeleton",
+  "kind": "implementation",
+  "objective": "Create the first direct-refresh route skeleton with route-group ownership for the gateway, Systems, Studio, and private admin entry points.",
+  "baseline": "pilot-accepted-starter-fingerprint-2ac485e5",
+  "criteria": [
+    {
+      "id": "PC-21",
+      "promise": "The six launch entry paths render distinct semantic headings from direct route components."
+    },
+    {
+      "id": "PC-22",
+      "promise": "The route skeleton uses the approved gateway, Systems, Studio, and admin ownership boundaries without creating a second application."
+    },
+    {
+      "id": "PC-23",
+      "promise": "The private admin entry point is marked noindex and the public skeleton contains no prices or fabricated proof."
+    },
+    {
+      "id": "PC-24",
+      "promise": "Focused route tests prove the six entry components render and the existing foundation gates remain green."
+    }
+  ],
+  "verification_gates": [
+    {
+      "criterion_id": "PC-21",
+      "procedure": "From starter, read the six route page files and run npm test; inspect the rendered component headings in tests/routes.test.tsx.",
+      "expected": "The root, Systems, Studio, About, Contact, and admin paths each have one named semantic h1 and the route test passes."
+    },
+    {
+      "criterion_id": "PC-22",
+      "procedure": "Inspect the relative paths under app/ and run npm run build to enumerate the App Router routes.",
+      "expected": "Route groups are used for gateway, Systems, and Studio ownership, one app remains in use, and the build lists the six intended entry paths."
+    },
+    {
+      "criterion_id": "PC-23",
+      "procedure": "Read app/admin/page.tsx and search all changed route files for price, testimonial, award, stock, or guaranteed-result language.",
+      "expected": "Admin metadata has robots noindex and no changed route file introduces prohibited public claims."
+    },
+    {
+      "criterion_id": "PC-24",
+      "procedure": "From starter, run npm.cmd run lint; npm.cmd run typecheck; npm.cmd test; npm.cmd run build; npm.cmd run cf:build.",
+      "expected": "All five commands exit 0 with the focused route tests passing and no lint warnings."
+    }
+  ],
+  "subsystems": ["route architecture"],
+  "expected_paths": [
+    "starter/app/page.tsx",
+    "starter/app/(gateway)/page.tsx",
+    "starter/app/(systems)/systems/page.tsx",
+    "starter/app/(studio)/studio/page.tsx",
+    "starter/app/(gateway)/about/page.tsx",
+    "starter/app/(gateway)/contact/page.tsx",
+    "starter/app/admin/page.tsx",
+    "starter/tests/routes.test.tsx"
+  ],
+  "risk_seams": [],
+  "material_unknowns": [],
+  "dependencies": ["T-01-bootstrap"],
+  "program_item_ids": ["ITEM-02"],
+  "estimated_minutes": 35,
+  "recon_complete": true,
+  "first_checkpoint": {
+    "minutes": 15,
+    "evidence": "First coherent route-group page set plus a focused route-test scaffold covering the entry paths."
+  }
+}

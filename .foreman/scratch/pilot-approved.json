@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "event": "pilot_approved",
+  "evidence": "ITEM-01 passed an independent fresh Codex verifier in a disposable candidate; the nine product fingerprints matched before and after, all five gates exited 0, and the lead reviewed the exact guarded projection."
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "event": "ticket_verified",
+  "ticket_id": "T-02-theme-boundaries",
+  "attempt": 1,
+  "verifier_id": "verifier-sol-t02-theme-20260813",
+  "verifier_evidence_sha256": "c91952f3b5f33e646cb280c4f83d1666dc95eb7dca250a81ac16315ad2d4b6ee",
+  "verdict": "PASS",
+  "lead_reviewed": true,
+  "processes_closed": true,
+  "verification_scope": "slice",
+  "completed_item_ids": [],
+  "criteria_evidence_path": ".foreman/reports/T-02-theme-verifier.md",
+  "criteria_evidence_sha256": "44186ffdc9f463515f0ffff9dd04912bfa59b577034189076e1fa4eb3f86affc",
+  "candidate_fingerprint": "e2747a6758b305495e08e2afa9376a798981b724dc1e1b0c04bad5622519a9d9",
+  "verification_minutes": 4.5949667,
+  "verification_noncached_input_tokens": 37077
+}

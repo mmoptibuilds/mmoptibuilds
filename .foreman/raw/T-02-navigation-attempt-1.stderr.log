@@ -1,0 +1,573 @@
+2026-08-13T11:02:27.351935Z ERROR codex_models_manager::cache: failed to load models cache: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:02:28.365134Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-08-13T11:02:28.365219Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-08-13T11:02:28.774946Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-08-13T11:02:28.967819Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer realm=\"OAuth\", resource_metadata=\"https://mcp.cloudflare.com/.well-known/oauth-protected-resource/mcp\"" })
+2026-08-13T11:02:46.933940Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:02:52.762327Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:02:59.662451Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.9 seconds
+Output:
+# Agent orchestration
+
+## Context contract
+
+Every agent receives only the current decision register, relevant source-of-truth section, task brief, owned files, acceptance criteria, and required output. The million-character transcript is an archive, not working memory.
+
+## Roles
+
+### Codex
+
+Own architecture, repository inspection, planning, integration, data/security implementation, verification, and final decisions. Use Luna/Terra models for substantial coding and difficult synthesis when available; use the default model when routing is uncertain.
+
+### fcc-claude
+
+Own focused implementation, refactoring, debugging, test repair, and code review inside an approved task. Use Haiku with low context for small mechanical work, Sonnet with moderate context for normal implementation, and Opus rarely for architecture deadlocks, difficult security analysis, or final critical review.
+
+### Agy / Antigravity / Gemini
+
+Own visual exploration, moodboards, image/video generation, layout alternatives, creative critique, and multimodal inspection. Use a fast Gemini model for iterations and a stronger model for final art direction or complex multimodal reasoning.
+
+### OpenCode and other tools
+
+Use as isolated reviewers, test runners, or focused implementation assistants after confirming installed capabilities. They never become a second simultaneous owner of the same files.
+
+## Terminal layout
+
+Keep Codex, fcc-claude, Agy/Gemini, and OpenCode in separate tabs. One coordinator assigns file ownership. Before editing, each agent reads the latest checkpoint. After editing, it writes a handoff with files, dependencies, commands, tests, risks, and next action.
+
+## Safety
+
+- No agent receives credentials or personal inquiry data.
+- No simultaneous edits to the same files.
+- Pin dependencies and preserve lockfiles.
+- Agents may install a task-relevant package only after checking existing capabilities and recording the reason.
+- A green build is not permission to deploy production.
+- Run security, accessibility, performance, and content-truth reviews before release.
+
+## Phase sequence
+
+`MAP â†’ DECIDE â†’ DESIGN â†’ STRUCTURE â†’ IMPLEMENT â†’ REVIEW â†’ TEST â†’ REFINE â†’ HAND OFF`
+
+Each phase produces a named, versioned artifact. Context is refreshed from those artifacts, not from stale chat memory.
+
+# Model routing and context budgets
+
+Model names and limits change. Before a long run, inspect the current CLI help/account status and substitute the closest available model. Never hard-code an unverified context limit.
+
+| Task | Preferred tier | Context budget | Escalate when |
+|---|---|---|---|
+| Rename, format, extract, small copy edit | Haiku/Flash/small Codex | Low: task + exact files | Requirements are ambiguous |
+| Isolated component or test | Haiku or fast Gemini | Lowâ€“medium | State or architecture crosses boundaries |
+| Normal feature implementation | Sonnet or Luna/Terra | Medium | Security, data migration, or repeated failures appear |
+| UI system or art direction | Strong Gemini + Sonnet/Luna review | Medium | Multimodal consistency remains unresolved |
+| Architecture/data model | Luna/Terra or Sonnet | Mediumâ€“high, curated | Tradeoffs remain high impact |
+| Security review | Strong Codex/Sonnet; Opus rarely | High, code-focused | Finding spans several trust boundaries |
+| Hard debugging | Luna/Terra/Sonnet | Start narrow, expand by evidence | Two disciplined attempts fail |
+| Image/video generation | Agy/Gemini media model | Prompt + references only | Brand consistency requires final review |
+| Final integration review | Strongest available, Opus rarely | High but curated | Launch risk is material |
+
+## Memory rule
+
+â€œLow,â€ â€œmedium,â€ and â€œhighâ€ describe task scope, not maximum token consumption. Low receives one brief and a few files. Medium receives relevant architecture, decisions, and a bounded directory. High receives a curated cross-cut, not the raw interview. Summarize completed work into the shared artifacts after every phase.
+
+## Escalation protocol
+
+1. State the unresolved question and evidence.
+2. Reduce the problem to a reproducible case.
+3. Ask a stronger model for a decision or diagnosis, not a full rewrite.
+4. Have another model review high-risk output.
+5. Verify with tests and source evidence.
+
+Use expensive models for uncertainty and consequence, not for volume.
+
+# Project brief
+
+## Objective
+
+Create a premium, conversion-led commercial website that makes MMOptiBuilds credible in two categories without making it feel like two unrelated companies. The experience should be strong enough for design-award consideration, but awards are an ambition rather than a usability exception.
+
+## Audiences
+
+### Systems
+
+- Buyers who need a gaming PC or workstation but want expert specification help
+- Creators and professionals with workload requirements
+- Small and medium businesses sourcing systems
+- Procurement teams that already know enterprise part numbers and quantities
+
+### Studio
+
+- Small businesses needing a credible first website
+- Startups preparing to launch, sell, hire, or raise
+- Established businesses replacing an outdated website
+- Premium clients seeking distinctive art direction and interaction
+
+## Primary outcomes
+
+1. A qualified visitor understands the relevant offer in under ten seconds.
+2. The visitor can choose the right inquiry path without decoding jargon.
+3. The owner receives a structured brief that is useful for research and quoting.
+4. The site establishes trust without fabricated proof.
+5. The owner can review, classify, quote, and follow up from one private dashboard.
+
+## Success measures
+
+- Qualified inquiry completion rate by route and division
+- Form start-to-completion rate and field-level abandonment
+- Organic impressions and qualified clicks by service intent
+- Response time from new inquiry to first manual reply
+- Accepted quote rate, tracked manually at first
+- Core Web Vitals at the 75th percentile: LCP â‰¤ 2.5 s, INP â‰¤ 200 ms, CLS â‰¤ 0.1
+- Zero critical accessibility or security findings at launch
+
+## Out of scope for launch
+
+- Public ecommerce and checkout
+- Live stock or public component pricing
+- Automated hardware compatibility guarantees
+- Enterprise installation, rack work, network deployment, or managed infrastructure
+- Client portals, visitor accounts, subscriptions, or managed hosting
+- A generic content-management system for every page
+- Multiple production repositories or microfrontends
+- Heavy 3D on every page
+
+C:\projects\mmoptibuilds-complete-delivery\starter\app\globals.css
+C:\projects\mmoptibuilds-complete-delivery\starter\app\layout.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(gateway)\layout.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(gateway)\page.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(gateway)\about\page.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(gateway)\contact\page.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(studio)\layout.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(studio)\studio\page.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(systems)\layout.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\(systems)\systems\page.tsx
+C:\projects\mmoptibuilds-complete-delivery\starter\app\admin\page.tsx
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { describe, expect, it } from "vitest";
+import GatewayPage from "../app/(gateway)/page";
+import AboutPage from "../app/(gateway)/about/page";
+import ContactPage from "../app/(gateway)/contact/page";
+import SystemsPage from "../app/(systems)/systems/page";
+import StudioPage from "../app/(studio)/studio/page";
+import AdminPage, { metadata as adminMetadata } from "../app/admin/page";
+
+const routes = [
+  ["gateway", GatewayPage, "mmoptibuilds"],
+  ["systems", SystemsPage, "Systems"],
+  ["studio", StudioPage, "Studio"],
+  ["about", AboutPage, "About mmoptibuilds"],
+  ["contact", ContactPage, "Contact mmoptibuilds"],
+  ["admin", AdminPage, "MMOptiBuilds admin"],
+] as const;
+
+describe("direct route components", () => {
+  it.each(routes)("renders a distinct semantic h1 for %s", (_route, Page, heading) => {
+    render(<Page />);
+
+    expect(screen.getByRole("heading", { level: 1, name: heading })).toBeInTheDocument();
+  });
+
+  it("marks the private admin entry as noindex", () => {
+    expect(adminMetadata.robots).toMatchObject({ index: false, follow: false });
+  });
+});
+
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { describe, expect, it } from "vitest";
+import HomePage from "../app/(gateway)/page";
+
+describe("root route", () => {
+  it("renders the mmoptibuilds parent-brand heading", () => {
+    render(<HomePage />);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "mmoptibuilds" }),
+    ).toBeInTheDocument();
+  });
+});
+
+import { cleanup, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { afterEach, describe, expect, it } from "vitest";
+import GatewayLayout from "../app/(gateway)/layout";
+import SystemsLayout from "../app/(systems)/layout";
+import StudioLayout from "../app/(studio)/layout";
+
+const divisionLayouts = [
+  ["gateway", GatewayLayout],
+  ["systems", SystemsLayout],
+  ["studio", StudioLayout],
+] as const;
+
+afterEach(cleanup);
+
+describe("public division theme boundaries", () => {
+  it.each(divisionLayouts)("renders the %s division boundary", (division, Layout) => {
+    render(
+      <Layout>
+        <p>Route content</p>
+      </Layout>,
+    );
+
+    expect(screen.getByTestId("division-shell")).toHaveAttribute("data-division", division);
+  });
+
+  it.each(divisionLayouts)("preserves children inside the %s division boundary", (_division, Layout) => {
+    render(
+      <Layout>
+        <p>Route content</p>
+      </Layout>,
+    );
+
+    expect(screen.getByText("Route content")).toBeInTheDocument();
+  });
+});
+
+{
+  "name": "mmoptibuilds",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.112.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.539.0",
+    "motion": "^13.1.0",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.62.0",
+    "server-only": "^0.0.1",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@opennextjs/cloudflare": "^1.20.2",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.35.0",
+    "eslint-config-next": "^16.3.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "supabase": "^2.39.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.120.1"
+  }
+}
+
+fatal: not a git repository (or any of the parent directories): .git
+
+2026-08-13T11:02:59.796332Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:03:05.546373Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:03:08.458348Z  WARN codex_core_plugins::manager: failed to auto-upgrade configured marketplace marketplace="impeccable" error=git clone marketplace source timed out after 30s: Cloning into 'C:\Users\User\.codex\.tmp/marketplaces\.staging\marketplace-upgrade-n8c78W'...
+Updating files:  54% (1693/3117)Updating files:  55% (1715/3117)Updating files:  56% (1746/3117)Updating files:  57% (1777/3117)Updating files:  58% (1808/3117)Updating files:  59% (1840/3117)Updating files:  60% (1871/3117)Updating files:  61% (1902/3117)Updating files:  62% (1933/3117)Updating files:  63% (1964/3117)Updating files:  64% (1995/3117)Updating files:  65% (2027/3117)Updating files:  66% (2058/3117)Updating files:  67% (2089/3117)Updating files:  68% (2120/3117)Updating files:  69% (2151/3117)Updating files:  70% (2182/3117)Updating files:  71% (2214/3117)Updating files:  72% (2245/3117)Updating files:  73% (2276/3117)Updating files:  74% (2307/3117)Updating files:  75% (2338/3117)Updating files:  76% (2369/3117)Updating files:  77% (2401/3117)Updating files:  78% (2432/3117)Updating files:  79% (2463/3117)Updating files:  80% (2494/3117)Updating files:  81% (2525/3117)Updating files:  82% (2556/3117)Updating files:  83% (2588/3117)Updating files:  84% (2619/3117)Updating files:  85% (2650/3117)Updating files:  86% (2681/3117)Updating files:  87% (2712/3117)Updating files:  88% (2743/3117)Updating files:  89% (2775/3117)Updating files:  90% (2806/3117)Updating files:  91% (2837/3117)Updating files:  92% (2868/3117)Updating files:  93% (2899/3117)Updating files:  94% (2930/3117)Updating files:  95% (2962/3117)Updating files:  96% (2993/3117)Updating files:  97% (3024/3117)Updating files:  98% (3055/3117)Updating files:  99% (3086/3117)Updating files: 100% (3117/3117)Updating files: 100% (3117/3117), done.
+2026-08-13T11:03:23.141376Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:03:26.349332Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.6 seconds
+Output:
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For 
+more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:2 char:1
++ npm test -- tests/navigation.test.tsx
++ ~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+2026-08-13T11:03:26.465497Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:03:32.349057Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 2.6 seconds
+Output:
+
+> mmoptibuilds@0.1.0 test
+> vitest run tests/navigation.test.tsx
+
+
+ RUN  v4.1.10 C:/projects/mmoptibuilds-complete-delivery/starter
+
+ ❯ tests/navigation.test.tsx (3 tests | 3 failed) 97ms
+     × renders the shared navigation in the gateway layout 80ms
+     × renders the shared navigation in the systems layout 7ms
+     × renders the shared navigation in the studio layout 8ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  16:33:31
+   Duration  1.05s (transform 49ms, setup 0ms, import 229ms, tests 97ms, environment 528ms)
+
+Warning: Ignoring extra certs from `C:\Users\User\AppData\Roaming\9router\mitm\rootCA.crt`, load failed: error:80000005:system library::Input/output error
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+Warning: Ignoring extra certs from `C:\Users\User\AppData\Roaming\9router\mitm\rootCA.crt`, load failed: error:80000005:system library::Input/output error
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/navigation.test.tsx > public division navigation > renders the shared navigation in the gateway layout
+TestingLibraryElementError: Unable to find an accessible element with the role "navigation" and name "Public division navigation"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mdata-division[39m=[32m"gateway"[39m
+      [33mdata-testid[39m=[32m"division-shell"[39m
+    [36m>[39m
+      [36m<p>[39m
+        [0mRoute content[0m
+      [36m</p>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/navigation.test.tsx:30:31
+     28|     );
+     29|
+     30|     const navigation = screen.getByRole("navigation", { name: "Public …
+       |                               ^
+     31|
+     32|     expect(navigation).toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/navigation.test.tsx > public division navigation > renders the shared navigation in the systems layout
+TestingLibraryElementError: Unable to find an accessible element with the role "navigation" and name "Public division navigation"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mdata-division[39m=[32m"systems"[39m
+      [33mdata-testid[39m=[32m"division-shell"[39m
+    [36m>[39m
+      [36m<p>[39m
+        [0mRoute content[0m
+      [36m</p>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/navigation.test.tsx:30:31
+     28|     );
+     29|
+     30|     const navigation = screen.getByRole("navigation", { name: "Public …
+       |                               ^
+     31|
+     32|     expect(navigation).toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/navigation.test.tsx > public division navigation > renders the shared navigation in the studio layout
+TestingLibraryElementError: Unable to find an accessible element with the role "navigation" and name "Public division navigation"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mdata-division[39m=[32m"studio"[39m
+      [33mdata-testid[39m=[32m"division-shell"[39m
+    [36m>[39m
+      [36m<p>[39m
+        [0mRoute content[0m
+      [36m</p>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/navigation.test.tsx:30:31
+     28|     );
+     29|
+     30|     const navigation = screen.getByRole("navigation", { name: "Public …
+       |                               ^
+     31|
+     32|     expect(navigation).toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+2026-08-13T11:03:32.460111Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:03:51.201170Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:04:00.448274Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:04:14.775446Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:04:25.738730Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:04:39.206766Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:04:47.877560Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:04:53.368951Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.8 seconds
+Output:
+import Link from "next/link";
+
+const publicLinks = [
+  { href: "/", label: "Gateway" },
+  { href: "/systems", label: "Systems" },
+  { href: "/studio", label: "Studio" },
+] as const;
+
+export default function SiteNavigation() {
+  return (
+    <nav aria-label="Public division navigation">
+      <ul>
+        {publicLinks.map(({ href, label }) => (
+          <li key={href}>
+            <Link href={href}>{label}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+import { cleanup, render, screen, within } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { afterEach, describe, expect, it } from "vitest";
+import GatewayLayout from "../app/(gateway)/layout";
+import SystemsLayout from "../app/(systems)/layout";
+import StudioLayout from "../app/(studio)/layout";
+
+const publicLayouts = [
+  ["gateway", GatewayLayout],
+  ["systems", SystemsLayout],
+  ["studio", StudioLayout],
+] as const;
+
+const publicLinks = [
+  ["Gateway", "/"],
+  ["Systems", "/systems"],
+  ["Studio", "/studio"],
+] as const;
+
+afterEach(cleanup);
+
+describe("public division navigation", () => {
+  it.each(publicLayouts)("renders the shared navigation in the %s layout", (_division, Layout) => {
+    render(
+      <Layout>
+        <p>Route content</p>
+      </Layout>,
+    );
+
+    const navigation = screen.getByRole("navigation", { name: "Public division navigation" });
+
+    expect(navigation).toBeInTheDocument();
+    expect(screen.getByText("Route content")).toBeInTheDocument();
+
+    for (const [name, href] of publicLinks) {
+      expect(within(navigation).getByRole("link", { name })).toHaveAttribute("href", href);
+    }
+
+    expect(within(navigation).queryByRole("link", { name: /admin/i })).not.toBeInTheDocument();
+    expect(navigation.querySelector('a[href="/admin"]')).not.toBeInTheDocument();
+  });
+});
+
+import type { ReactNode } from "react";
+import SiteNavigation from "../../components/site-navigation";
+
+export default function GatewayLayout({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <div data-division="gateway" data-testid="division-shell">
+      <SiteNavigation />
+      {children}
+    </div>
+  );
+}
+
+import type { ReactNode } from "react";
+import SiteNavigation from "../../components/site-navigation";
+
+export default function SystemsLayout({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <div data-division="systems" data-testid="division-shell">
+      <SiteNavigation />
+      {children}
+    </div>
+  );
+}
+
+import type { ReactNode } from "react";
+import SiteNavigation from "../../components/site-navigation";
+
+export default function StudioLayout({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <div data-division="studio" data-testid="division-shell">
+      <SiteNavigation />
+      {children}
+    </div>
+  );
+}
+
+fatal: not a git repository (or any of the parent directories): .git
+
+2026-08-13T11:04:53.481912Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:05:00.029307Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T11:05:14.466602Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: Send message error Transport [rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>] error: Auth required, when send initialize request

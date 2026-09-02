@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "event": "program_started",
+  "program_id": "P-MMOPTIBUILDS-2026-08-13",
+  "plan_id": "plan-foundation-through-release",
+  "total_items": 11,
+  "program_item_ids": [
+    "ITEM-01",
+    "ITEM-02",
+    "ITEM-03",
+    "ITEM-04",
+    "ITEM-05",
+    "ITEM-06",
+    "ITEM-07",
+    "ITEM-08",
+    "ITEM-09",
+    "ITEM-10",
+    "ITEM-11"
+  ],
+  "long_program": true,
+  "pilot_limit": 1,
+  "max_parallel": 1
+}

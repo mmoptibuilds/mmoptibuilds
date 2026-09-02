@@ -1,0 +1,21 @@
+{
+  "ticket_id": "T-01-bootstrap",
+  "provider": "lead",
+  "requested_model": "current-lead",
+  "requested_effort": "high",
+  "evidence_labels": ["native-inherited-unconfirmed"],
+  "quality_floor": "Clean Next/TypeScript/Vitest/OpenNext foundation with no unsupported product claims.",
+  "residual_judgment": "Moderate, bounded to application foundation files.",
+  "uncertainty": "Codex CLI accepts the requested seat; completed-worker runtime metadata remains to be inspected from the receipt/stream.",
+  "write_set": [
+    "starter/app/layout.tsx",
+    "starter/app/page.tsx",
+    "starter/app/globals.css",
+    "starter/tests/smoke.test.tsx",
+    "starter/vitest.config.ts",
+    "starter/next-env.d.ts",
+    "starter/next.config.js",
+    "starter/postcss.config.mjs",
+    "starter/tsconfig.json"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "event": "ticket_verified",
+  "ticket_id": "T-02-route-skeleton",
+  "attempt": 1,
+  "verifier_id": "verifier-sol-t02-final-20260813",
+  "verifier_evidence_sha256": "3f61298bfc949b99874918707a3042bdcb629fe0c45d3b72249091b46cff61c9",
+  "verdict": "PASS",
+  "lead_reviewed": true,
+  "processes_closed": true,
+  "verification_scope": "slice",
+  "completed_item_ids": [],
+  "criteria_evidence_path": ".foreman/reports/T-02-verifier-final.md",
+  "criteria_evidence_sha256": "270d578220511922c6239d65ee8d6da972ca2746436958d93a662d63498c0ce0",
+  "candidate_fingerprint": "3ac7c418a4caa30e53d34b64746c368ec53b4b8092dbd80ee7f8cb79e0d4d57c",
+  "verification_minutes": 5.3747833,
+  "verification_noncached_input_tokens": 74667
+}

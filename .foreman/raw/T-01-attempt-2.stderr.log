@@ -1,0 +1,108 @@
+2026-08-13T10:00:09.215540Z ERROR codex_models_manager::cache: failed to load models cache: missing field `base_instructions` at line 94 column 5
+2026-08-13T10:00:09.794687Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-08-13T10:00:09.794829Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-08-13T10:00:10.002362Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-08-13T10:00:10.656915Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-08-13T10:00:10.656968Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-08-13T10:00:57.968394Z  WARN codex_core_plugins::manager: failed to auto-upgrade configured marketplace marketplace="impeccable" error=git clone marketplace source timed out after 30s: Cloning into 'C:\Users\User\.codex\.tmp/marketplaces\.staging\marketplace-upgrade-FPtWFf'...
+Updating files:  41% (1281/3117)Updating files:  42% (1310/3117)Updating files:  43% (1341/3117)Updating files:  44% (1372/3117)Updating files:  45% (1403/3117)Updating files:  46% (1434/3117)Updating files:  47% (1465/3117)Updating files:  48% (1497/3117)Updating files:  49% (1528/3117)Updating files:  50% (1559/3117)Updating files:  51% (1590/3117)Updating files:  52% (1621/3117)Updating files:  53% (1653/3117)Updating files:  54% (1684/3117)Updating files:  55% (1715/3117)Updating files:  56% (1746/3117)Updating files:  57% (1777/3117)Updating files:  58% (1808/3117)Updating files:  59% (1840/3117)Updating files:  60% (1871/3117)Updating files:  61% (1902/3117)Updating files:  62% (1933/3117)Updating files:  63% (1964/3117)Updating files:  64% (1995/3117)Updating files:  65% (2027/3117)Updating files:  66% (2058/3117)Updating files:  67% (2089/3117)Updating files:  68% (2120/3117)Updating files:  69% (2151/3117)Updating files:  70% (2182/3117)Updating files:  71% (2214/3117)Updating files:  72% (2245/3117)Updating files:  72% (2274/3117)Updating files:  73% (2276/3117)Updating files:  74% (2307/3117)Updating files:  75% (2338/3117)Updating files:  76% (2369/3117)Updating files:  77% (2401/3117)Updating files:  78% (2432/3117)Updating files:  79% (2463/3117)Updating files:  80% (2494/3117)Updating files:  81% (2525/3117)Updating files:  82% (2556/3117)Updating files:  83% (2588/3117)Updating files:  84% (2619/3117)Updating files:  85% (2650/3117)Updating files:  86% (2681/3117)Updating files:  87% (2712/3117)Updating files:  88% (2743/3117)Updating files:  89% (2775/3117)Updating files:  90% (2806/3117)Updating files:  91% (2837/3117)Updating files:  92% (2868/3117)Updating files:  93% (2899/3117)Updating files:  94% (2930/3117)Updating files:  95% (2962/3117)Updating files:  96% (2993/3117)Updating files:  97% (3024/3117)Updating files:  98% (3055/3117)Updating files:  99% (3086/3117)Updating files: 100% (3117/3117)Updating files: 100% (3117/3117), done.
+2026-08-13T10:01:46.077944Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.7 seconds
+Output:
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For 
+more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:2 char:1
++ npm run lint
++ ~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+2026-08-13T10:02:37.134303Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T10:02:57.266517Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 65.5 seconds
+Output:
+
+> mmoptibuilds@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+C:\projects\mmoptibuilds-complete-delivery\starter\postcss.config.mjs
+  1:1  warning  Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+✖ 1 problem (0 errors, 1 warning)
+
+ESLint found too many warnings (maximum: 0).
+
+2026-08-13T10:02:57.469602Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T10:03:11.211224Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 7.7 seconds
+Output:
+
+> mmoptibuilds@0.1.0 typecheck
+> tsc --noEmit
+
+tests/smoke.test.tsx(11,7): error TS2339: Property 'toBeInTheDocument' does not exist on type 'Assertion<HTMLElement>'.
+
+2026-08-13T10:05:07.846949Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 20.1 seconds
+Output:
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+
+> mmoptibuilds@0.1.0 cf:build
+> opennextjs-cloudflare build
+
+
+┌─────────────────────────────┐
+│ OpenNext — Cloudflare build │
+└─────────────────────────────┘
+
+Warning: Ignoring extra certs from `C:\Users\User\AppData\Roaming\9router\mitm\rootCA.crt`, load failed: error:80000005:system library::Input/output error
+WARN OpenNext is not fully compatible with Windows.
+WARN For optimal performance, it is recommended to use Windows Subsystem for Linux (WSL).
+WARN While OpenNext may function on Windows, it could encounter unpredictable failures during runtime.
+ERROR Error: next.config.js not found. Please make sure you are running this command inside a Next.js app.
+
+2026-08-13T10:05:42.100999Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T10:05:50.404810Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5
+2026-08-13T10:06:05.456674Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `base_instructions` at line 94 column 5

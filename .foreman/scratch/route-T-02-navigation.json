@@ -1,0 +1,17 @@
+{
+  "ticket_id": "T-02-navigation",
+  "provider": "codex-cli",
+  "requested_model": "gpt-5.6-terra",
+  "requested_effort": "medium",
+  "evidence_labels": ["requested-pin"],
+  "quality_floor": "Shared semantic public navigation with native links, truthful destinations, and green repository gates.",
+  "residual_judgment": "Low, limited to small navigation semantics and layout composition.",
+  "uncertainty": "Runtime model identity will be confirmed only if the worker receipt or report exposes it.",
+  "write_set": [
+    "starter/components/site-navigation.tsx",
+    "starter/app/(gateway)/layout.tsx",
+    "starter/app/(systems)/layout.tsx",
+    "starter/app/(studio)/layout.tsx",
+    "starter/tests/navigation.test.tsx"
+  ]
+}

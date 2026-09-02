@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "T-02-navigation",
+  "kind": "implementation",
+  "objective": "Add the shared accessible public division navigation to the verified gateway, Systems, and Studio shells.",
+  "baseline": "accepted-theme-boundaries-fingerprint-e2747a67",
+  "criteria": [
+    {
+      "id": "PC-28",
+      "promise": "The three public division shells render one shared semantic navigation with truthful gateway, Systems, and Studio links."
+    },
+    {
+      "id": "PC-29",
+      "promise": "The navigation is keyboard-native, has an accessible label, and exposes no private admin destination."
+    },
+    {
+      "id": "PC-30",
+      "promise": "Focused navigation tests, route tests, and all foundation gates pass without changing product files outside this slice."
+    }
+  ],
+  "verification_gates": [
+    {
+      "criterion_id": "PC-28",
+      "procedure": "Read components/site-navigation.tsx and the three public layouts; run the focused navigation tests.",
+      "expected": "Each public shell renders the same semantic navigation with links to /, /systems, and /studio."
+    },
+    {
+      "criterion_id": "PC-29",
+      "procedure": "Inspect the nav element and link elements and run focused tests for accessible label, hrefs, and absence of admin.",
+      "expected": "The navigation uses native links, exposes an accessible name, has the three public destinations, and contains no /admin link."
+    },
+    {
+      "criterion_id": "PC-30",
+      "procedure": "From starter, run npm.cmd run lint; npm.cmd run typecheck; npm.cmd test; npm.cmd run build; npm.cmd run cf:build.",
+      "expected": "All five commands exit 0, focused navigation tests pass, and the six direct routes remain buildable."
+    }
+  ],
+  "subsystems": ["public navigation"],
+  "expected_paths": [
+    "starter/components/site-navigation.tsx",
+    "starter/app/(gateway)/layout.tsx",
+    "starter/app/(systems)/layout.tsx",
+    "starter/app/(studio)/layout.tsx",
+    "starter/tests/navigation.test.tsx"
+  ],
+  "risk_seams": [],
+  "material_unknowns": [],
+  "dependencies": ["T-02-theme-boundaries"],
+  "program_item_ids": ["ITEM-02"],
+  "estimated_minutes": 20,
+  "recon_complete": true,
+  "first_checkpoint": {
+    "minutes": 10,
+    "evidence": "One shared navigation component, its use in all three public layouts, and focused link/accessibility tests."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "event": "ticket_outcome",
+  "ticket_id": "T-01-bootstrap",
+  "attempt": 2,
+  "outcome": "needs_fix",
+  "cause_family": "bad-ticket",
+  "worker_receipt_sha256": "08ea3a3729a6a52dd7868050c825e1b9322c70fc54ad87b5d1e01ffd7e82b22a",
+  "worker_minutes": 6.6889667,
+  "noncached_input_tokens": 43747
+}

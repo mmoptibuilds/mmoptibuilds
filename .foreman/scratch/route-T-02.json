@@ -1,0 +1,20 @@
+{
+  "ticket_id": "T-02-route-skeleton",
+  "provider": "codex-cli",
+  "requested_model": "gpt-5.6-terra",
+  "requested_effort": "medium",
+  "evidence_labels": ["requested-pin"],
+  "quality_floor": "Direct-refresh-compatible route skeleton with semantic headings, truthful copy, noindex admin, and green repository gates.",
+  "residual_judgment": "Moderate, limited to App Router route ownership.",
+  "uncertainty": "Runtime model identity will be confirmed only if the worker receipt or report exposes it.",
+  "write_set": [
+    "starter/app/page.tsx",
+    "starter/app/(gateway)/page.tsx",
+    "starter/app/(systems)/systems/page.tsx",
+    "starter/app/(studio)/studio/page.tsx",
+    "starter/app/(gateway)/about/page.tsx",
+    "starter/app/(gateway)/contact/page.tsx",
+    "starter/app/admin/page.tsx",
+    "starter/tests/routes.test.tsx"
+  ]
+}

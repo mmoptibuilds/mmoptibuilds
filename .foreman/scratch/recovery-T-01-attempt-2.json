@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "event": "recovery_action",
+  "ticket_id": "T-01-bootstrap",
+  "after_attempt": 2,
+  "action": "lead-takeover",
+  "evidence": "The worker proved the declared product files but could not satisfy the pilot gates because lint and OpenNext require two existing/bootstrap configuration seams omitted from the write set; the lead will own those files and preserve the final tsconfig baseline."
+}

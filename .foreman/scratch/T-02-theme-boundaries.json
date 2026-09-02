@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "T-02-theme-boundaries",
+  "kind": "implementation",
+  "objective": "Complete the route/theme boundary slice with scoped division shells for gateway, Systems, and Studio.",
+  "baseline": "accepted-route-skeleton-fingerprint-2ac485e5",
+  "criteria": [
+    {
+      "id": "PC-25",
+      "promise": "Gateway, Systems, and Studio route groups each render a scoped division shell with an independent data boundary and theme variables."
+    },
+    {
+      "id": "PC-26",
+      "promise": "The three public division layouts preserve the six direct routes and keep the private admin route outside public division shells."
+    },
+    {
+      "id": "PC-27",
+      "promise": "Focused theme-boundary tests and the existing route tests prove the boundary contract while preserving all foundation gates."
+    }
+  ],
+  "verification_gates": [
+    {
+      "criterion_id": "PC-25",
+      "procedure": "Read the three route-group layouts and globals.css; run npm test to exercise the shell assertions.",
+      "expected": "Each public division has its own layout data boundary, and CSS contains separate gateway, systems, and studio variable scopes."
+    },
+    {
+      "criterion_id": "PC-26",
+      "procedure": "Inspect the App Router tree and run npm run build to enumerate routes; read app/admin/page.tsx and the new layouts.",
+      "expected": "The six direct routes remain present, the three public shells are distinct, and admin is not nested in a public division layout."
+    },
+    {
+      "criterion_id": "PC-27",
+      "procedure": "From starter, run npm.cmd run lint; npm.cmd run typecheck; npm.cmd test; npm.cmd run build; npm.cmd run cf:build.",
+      "expected": "All five commands exit 0, theme-boundary tests pass, and the six direct routes remain buildable."
+    }
+  ],
+  "subsystems": ["route architecture", "theme boundaries"],
+  "expected_paths": [
+    "starter/app/globals.css",
+    "starter/app/(gateway)/layout.tsx",
+    "starter/app/(systems)/layout.tsx",
+    "starter/app/(studio)/layout.tsx",
+    "starter/tests/theme-boundaries.test.tsx"
+  ],
+  "risk_seams": [],
+  "material_unknowns": [],
+  "dependencies": ["T-02-route-skeleton"],
+  "program_item_ids": ["ITEM-02"],
+  "estimated_minutes": 20,
+  "recon_complete": true,
+  "first_checkpoint": {
+    "minutes": 10,
+    "evidence": "Three route-group layouts, independent CSS scopes, and a focused theme-boundary test scaffold."
+  }
+}

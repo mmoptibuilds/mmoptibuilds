@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "event": "ticket_outcome",
+  "ticket_id": "T-01-bootstrap",
+  "attempt": 1,
+  "outcome": "needs_fix",
+  "cause_family": "verification-harness",
+  "worker_receipt_sha256": "1b319bfc4f59f55b52d1457d8acd6cd062db82a0b99939194e5673627d43d8bb",
+  "worker_minutes": 0.00685,
+  "noncached_input_tokens_status": "unavailable",
+  "noncached_input_tokens_reason": "Codex rejected the non-Git working directory before reading the ticket; no model call was made."
+}

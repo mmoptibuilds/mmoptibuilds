@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "event": "ticket_outcome",
+  "ticket_id": "T-01-bootstrap",
+  "attempt": 3,
+  "outcome": "reported",
+  "worker_receipt_sha256": "987e2a57092efd69fd6e5c8237819401185763e531c4f052f438253e0b97851e",
+  "worker_minutes_status": "unavailable",
+  "worker_minutes_reason": "Lead takeover used local apply_patch and shell gates; no process-level lead telemetry is exposed.",
+  "noncached_input_tokens_status": "unavailable",
+  "noncached_input_tokens_reason": "Lead takeover ran in the coordinating session without billable token telemetry."
+}

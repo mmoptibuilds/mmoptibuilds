@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "event": "ticket_verified",
+  "ticket_id": "T-02-navigation",
+  "attempt": 1,
+  "verifier_id": "verifier-sol-t02-navigation-20260813",
+  "verifier_evidence_sha256": "144c646401fb39af5fab98088fa72693c0383725089543593cda74b5a46bf967",
+  "verdict": "PASS",
+  "lead_reviewed": true,
+  "processes_closed": true,
+  "verification_scope": "slice",
+  "completed_item_ids": [],
+  "criteria_evidence_path": ".foreman/reports/T-02-navigation-verifier.md",
+  "criteria_evidence_sha256": "e6557d856e31d09c13c059f3f14dc96c60f59cc400f3da70d11359c004e5655c",
+  "candidate_fingerprint": "015550bcfc06f1d41dba3004a0b6a7c6743a42f7a4f55d3818446100e6c87898",
+  "verification_minutes": 5.3383167,
+  "verification_noncached_input_tokens": 61568
+}

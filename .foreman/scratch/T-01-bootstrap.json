@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "T-01-bootstrap",
+  "kind": "implementation",
+  "objective": "Bootstrap the application baseline with a minimal accessible root route and a reproducible test/build foundation.",
+  "baseline": "implementation-pack-tree-2026-08-13",
+  "criteria": [
+    {
+      "id": "PC-01",
+      "promise": "The application root route renders the mmoptibuilds parent-brand heading as a semantic level-one heading."
+    },
+    {
+      "id": "PC-02",
+      "promise": "The root document exposes truthful baseline metadata identifying mmoptibuilds without prices or unsupported proof."
+    },
+    {
+      "id": "PC-03",
+      "promise": "The repository smoke test independently checks the root heading and passes through the package test command."
+    },
+    {
+      "id": "PC-04",
+      "promise": "The bootstrap foundation passes the repository-native lint, typecheck, unit, Next build, and OpenNext build gates."
+    }
+  ],
+  "verification_gates": [
+    {
+      "criterion_id": "PC-01",
+      "procedure": "From starter, run npm run build and inspect the generated root route, then read app/page.tsx.",
+      "expected": "Next build exits 0 and app/page.tsx contains one semantic h1 whose accessible name includes mmoptibuilds."
+    },
+    {
+      "criterion_id": "PC-02",
+      "procedure": "Read starter/app/layout.tsx and inspect the root metadata declaration.",
+      "expected": "Metadata names mmoptibuilds truthfully and contains no public pricing, fabricated proof, or unsupported claim."
+    },
+    {
+      "criterion_id": "PC-03",
+      "procedure": "From starter, run npm test -- --runInBand.",
+      "expected": "Vitest exits 0 and the focused smoke test asserts the root h1 by accessible role/name."
+    },
+    {
+      "criterion_id": "PC-04",
+      "procedure": "From starter, run npm run lint; npm run typecheck; npm test; npm run build; npm run cf:build.",
+      "expected": "All five commands exit 0 with no lint warnings and no type, test, Next, or OpenNext build errors."
+    }
+  ],
+  "subsystems": ["application bootstrap"],
+  "expected_paths": [
+    "starter/app/layout.tsx",
+    "starter/app/page.tsx",
+    "starter/app/globals.css",
+    "starter/tests/smoke.test.tsx",
+    "starter/vitest.config.ts",
+    "starter/next-env.d.ts",
+    "starter/next.config.js",
+    "starter/postcss.config.mjs",
+    "starter/tsconfig.json"
+  ],
+  "risk_seams": [],
+  "material_unknowns": [],
+  "dependencies": [],
+  "program_item_ids": ["ITEM-01"],
+  "estimated_minutes": 30,
+  "recon_complete": true,
+  "first_checkpoint": {
+    "minutes": 15,
+    "evidence": "First coherent app/page.tsx plus app/layout.tsx and the focused smoke-test scaffold."
+  }
+}

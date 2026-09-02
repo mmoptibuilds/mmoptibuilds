@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+
+  --division-surface: #ffffff;
+  --division-text: #171717;
+  --division-accent: #4a5568;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 2rem;
+}
+
+[data-division="gateway"] {
+  --division-surface: #ffffff;
+  --division-text: #171717;
+  --division-accent: #4a5568;
+}
+
+[data-division="systems"] {
+  --division-surface: #f7f8fa;
+  --division-text: #111827;
+  --division-accent: #334155;
+}
+
+[data-division="studio"] {
+  --division-surface: #fffaf5;
+  --division-text: #2d1b3d;
+  --division-accent: #7c3aed;
+}

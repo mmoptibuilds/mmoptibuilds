@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "event": "progress_reported",
+  "reasons": ["pilot_result", "no_accepted_throughput", "projection"],
+  "snapshot": {
+    "accepted_items": 0,
+    "verified_tickets": 0,
+    "attempts": 2,
+    "remaining_items": 11,
+    "active_attempts": 0,
+    "reported_unverified": 0,
+    "elapsed_minutes": 8.0,
+    "projection": {
+      "remaining_items": 11,
+      "projected_additional_work_minutes": "unavailable_until_first_completed_item",
+      "projected_additional_noncached_input_tokens": "unavailable_until_first_completed_item"
+    },
+    "projection_note": "The pilot has no accepted item yet; guarded throughput remains unavailable while its contract is corrected."
+  }
+}

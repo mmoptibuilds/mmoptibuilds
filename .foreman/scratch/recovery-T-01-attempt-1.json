@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "event": "recovery_action",
+  "ticket_id": "T-01-bootstrap",
+  "after_attempt": 1,
+  "action": "correct-ticket",
+  "evidence": "The raw stderr states that Codex refused the non-Git starter directory before reading the ticket; rerun with the supported skip-git-repo-check flag while keeping the same bounded write set and acceptance gates."
+}
